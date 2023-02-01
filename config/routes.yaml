@@ -12,8 +12,3 @@ api:
     prefix: /api
     defaults:
         _format: json
-
-app.swagger_ui:
-    path: /docs
-    methods: GET
-    defaults: { _controller: nelmio_api_doc.controller.swagger_ui }

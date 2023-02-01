@@ -20,7 +20,7 @@ class SheetFixtures extends Fixture
       $sheet->setName($faker->sentence(3));
       $sheet->setSynopsis($faker->sentence(10));
       $sheet->setType(array_rand($types, 1));
-      $sheet->setDate($faker->dateTimeBetween('-6 months'));
+      $sheet->setCreatedAt($faker->dateTimeBetween('-6 months'));
 
       $manager->persist($sheet);
     }

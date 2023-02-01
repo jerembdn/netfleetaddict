@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Controller\Api;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -28,7 +27,7 @@ class ApiSheetController extends AbstractController
   }
 
   #[Route('/create', name: '_create', methods: ['POST'])]
-  public function create(Request $request)
+  public function create(Request $request): Response
   {
     $data = json_decode($request->getContent(), true);
     $dto = $this->serializer->denormalize($data, CreateSheetDto::class);
@@ -40,7 +39,7 @@ class ApiSheetController extends AbstractController
   }
 
   #[Route('/getall', name: '_list', methods: ['GET'])]
-  public function getAll()
+  public function getAll(): Response
   {
     $sheets = $this->sheetService->findAll();
 
@@ -48,9 +47,9 @@ class ApiSheetController extends AbstractController
   }
 
   #[Route('/get/{id}', name: '_get', methods: ['GET'])]
-  public function get($id)
+  public function get(int $id): Response
   {
-    $sheet = $this->sheetService->find($id);
+    $sheet = $this->sheetService->findById($id);
 
     if (!$sheet) {
       $this->json(HttpResponseHelper::notFound("Sheet not found"), 404);

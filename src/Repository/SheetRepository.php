@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Repository;
 
 use App\Entity\Sheet;
@@ -44,10 +45,10 @@ class SheetRepository extends ServiceEntityRepository
 //     */
 //    public function findByExampleField($value): array
 //    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
+//        return $this->createQueryBuilder('s')
+//            ->andWhere('s.exampleField = :val')
 //            ->setParameter('val', $value)
-//            ->orderBy('f.id', 'ASC')
+//            ->orderBy('s.id', 'ASC')
 //            ->setMaxResults(10)
 //            ->getQuery()
 //            ->getResult()
@@ -56,8 +57,8 @@ class SheetRepository extends ServiceEntityRepository
 
 //    public function findOneBySomeField($value): ?Sheet
 //    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
+//        return $this->createQueryBuilder('s')
+//            ->andWhere('s.exampleField = :val')
 //            ->setParameter('val', $value)
 //            ->getQuery()
 //            ->getOneOrNullResult()
